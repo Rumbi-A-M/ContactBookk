@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>ContactBook</title>
 </head>
 
@@ -18,7 +19,11 @@
     <script src="config.js"></script>
 
     <script>
-             function fetchContacts(){
+     ////////////////////////button event listener////////
+      document.getElementById("refresh").addEventListener(click, fetchContacts)
+        
+
+           function fetchContacts(){
                 fetch(rootPath + "controller/get-contacts/")
                 .then(function(response){
                     return response.json();
@@ -34,11 +39,17 @@
                 for(a in data){
                     output += 
                         <tr>
-                            <td><img src="${rootPath}controller/uploads/${data[a].avatar}"/></td>
+                            <td><img src="${rootPath}controller/uploads/${data[a].avatar}  "/></td>
+                            <td><h5>${data[a].firstname} </h5></td>
+                            <td><h5>${data[a].lastname} </h5></td>
                         </tr>
-
+ 
                     }
+                    output += "</table";
+                    document.getElementById("table").innerHTML = output;
              }
+
+    
     </script>
 </body>
 
