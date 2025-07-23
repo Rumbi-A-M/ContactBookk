@@ -16,7 +16,3 @@ A simple web app to add, view, and manage contacts. Users can add new contacts w
 - JavaScript (Vanilla)
 - LocalStorage API
 
-## Installation / How to Run
-1. Clone the repo:
-```bash
-git clone https://github.com/Rumbi-A-M/contact-book.git
